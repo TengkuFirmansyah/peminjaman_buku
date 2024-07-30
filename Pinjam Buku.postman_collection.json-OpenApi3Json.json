@@ -1,0 +1,139 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Pinjam Buku",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:8001/api",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/borrowing": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Pinjam_Buku",
+        "operationId": "Pinjam_Buku",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "code_book",
+                  "code_member"
+                ],
+                "type": "object",
+                "properties": {
+                  "code_book": {
+                    "type": "string",
+                    "example": "JK-45"
+                  },
+                  "code_member": {
+                    "type": "string",
+                    "example": "M002"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/borrowing/return": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Kembalikan_Buku",
+        "operationId": "Kembalikan_Buku",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "encoding": {},
+              "schema": {
+                "required": [
+                  "code_book",
+                  "code_member"
+                ],
+                "type": "object",
+                "properties": {
+                  "code_book": {
+                    "type": "string",
+                    "example": "JK-45"
+                  },
+                  "code_member": {
+                    "type": "string",
+                    "example": "M001"
+                  }
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/books": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "List_Books",
+        "operationId": "List_Books",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },"/members": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "List_Members",
+        "operationId": "List_Members",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Misc",
+      "description": ""
+    }
+  ]
+}
